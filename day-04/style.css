@@ -1,0 +1,7 @@
+body { background: #f1f5f9; color: #1e293b; font-family: Arial, sans-serif; line-height: 1.6; margin: 0; }
+header, main, footer { max-width: 720px; margin: auto; padding: 24px; }
+header { text-align: center; }
+section { background: white; border-radius: 8px; margin: 18px 0; padding: 22px; }
+h1, h2 { color: #0f766e; }
+.button { background: #0f766e; border-radius: 5px; color: white; display: inline-block; padding: 10px 16px; text-decoration: none; }
+footer { color: #64748b; text-align: center; }

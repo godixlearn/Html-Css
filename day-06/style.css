@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+body { background: #eef2ff; color: #1e1b4b; font-family: Arial, sans-serif; margin: 0; }
+main { margin: auto; max-width: 760px; padding: 40px 20px; }
+.box-example { background: #c7d2fe; border: 8px solid #4f46e5; margin: 32px auto; max-width: 520px; padding: 32px; text-align: center; }
+.size-row { display: flex; gap: 20px; align-items: stretch; }
+.small, .responsive { background: white; border: 2px dashed #818cf8; margin: 12px 0; padding: 20px; }
+.small { max-width: 180px; min-height: 120px; width: 100%; }.responsive { flex: 1; min-height: 120px; }
+section { background: white; border-radius: 10px; margin-top: 24px; padding: 20px; }
+@media (max-width: 500px) { .size-row { flex-direction: column; }.small { max-width: none; } }

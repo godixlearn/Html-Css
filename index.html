@@ -1,121 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Coimbatore</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML & CSS Learning Journey</title>
 </head>
-
 <body>
-
-    <header>
-        <h1>Welcome to Coimbatore</h1>
-        <p>Discover the beauty, food and places of Coimbatore</p>
-    </header>
-
-    <nav>
-        <a href="#about">About</a>
-        <a href="#places">Places</a>
-        <a href="#food">Food</a>
-        <a href="#media">Media</a>
-    </nav>
-
-    <main>
-
-        <section id="about">
-            <h2>Welcome to Coimbatore</h2>
-
-            <img
-                src="data:image/jpeg;base64,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"
-                alt="Beautiful view of Coimbatore"
-            >
-
-            <p>
-                Coimbatore is a beautiful city in Tamil Nadu known for
-                its pleasant climate, temples, nature and delicious food.
-            </p>
-        </section>
-
-        <section id="places">
-            <h2>Places to Visit</h2>
-
-            <ul>
-                <li>Marudamalai Temple</li>
-                <li>Isha Yoga Center</li>
-                <li>Gedee Car Museum</li>
-            </ul>
-        </section>
-
-        <section id="food">
-            <h2>Things to Try</h2>
-
-            <ol>
-                <li>Try local food</li>
-                <li>Visit Marudamalai</li>
-                <li>Explore the city</li>
-            </ol>
-        </section>
-
-        <section id="Contact>
-            <h2>Contact Us</h2>
-
-            <form action="submit_form.php" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
-
-        </section> 
-
-
-        <section>
-
-            <p>
-                Learn more about Tamil Nadu tourism:
-                <a
-                    href="https://www.tamilnadutourism.tn.gov.in/"
-                    target="_blank"
-                >
-                    Visit Tourism Website
-                </a>
-            </p>
-        </section>
-
-        <section id="media">
-            <h2>Media</h2>
-
-            <h3>Listen to Music</h3>
-
-            <audio controls>
-                <source src="audio/music.mp3" type="audio/mpeg">
-                Your browser does not support audio.
-            </audio>
-
-            <h3>Watch a Travel Video</h3>
-
-            <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Travel Video"
-                allowfullscreen>
-            </iframe>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>© 2026 Explore Coimbatore</p>
-    </footer>
-
+  <header>
+    <h1>HTML & CSS Learning Journey</h1>
+    <p>A collection of small, independent practice pages.</p>
+  </header>
+  <main>
+    <h2>Daily lessons</h2>
+    <ol>
+      <li><a href="day-01/index.html">Day 1: HTML structure and headings</a></li>
+      <li><a href="day-02/index.html">Day 2: Content, links, media, and paths</a></li>
+      <li><a href="day-03/index.html">Day 3: Semantic HTML, forms, and tables</a></li>
+      <li><a href="day-04/index.html">Day 4: Styling HTML</a></li>
+      <li><a href="day-05/index.html">Day 5: CSS foundations</a></li>
+      <li><a href="day-06/index.html">Day 6: The CSS box model</a></li>
+      <li><a href="day-07/index.html">Day 7: Display and flex</a></li>
+      <li><a href="day-08/index.html">Day 8: Flexbox layouts</a></li>
+      <li><a href="day-09/index.html">Day 9: One-page website</a></li>
+    </ol>
+    <p><a href="projects/portfolio/index.html">Open the portfolio project</a></p>
+  </main>
 </body>
 </html>

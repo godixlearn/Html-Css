@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 3 | Semantic HTML</title>
+</head>
+<body>
+  <header>
+    <h1>Day 3: Semantic HTML</h1>
+    <nav aria-label="Main navigation">
+      <a href="#article">Article</a> |
+      <a href="#schedule">Schedule</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <article id="article">
+      <h2>Why semantic elements matter</h2>
+      <p>Elements such as <code>header</code>, <code>main</code>, <code>article</code>, and <code>footer</code> describe the purpose of content.</p>
+      <aside>
+        <p><strong>Tip:</strong> Semantic HTML helps people and assistive technologies understand a page.</p>
+      </aside>
+    </article>
+
+    <section id="schedule">
+      <h2>Practice schedule</h2>
+      <table>
+        <thead><tr><th>Day</th><th>Topic</th><th>Time</th></tr></thead>
+        <tbody>
+          <tr><td>Monday</td><td>HTML</td><td>30 min</td></tr>
+          <tr><td>Tuesday</td><td>CSS</td><td>30 min</td></tr>
+          <tr><td>Wednesday</td><td>Project</td><td>45 min</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contact">
+      <h2>Contact form</h2>
+      <form>
+        <p><label for="name">Name</label><br><input id="name" name="name" type="text" placeholder="Your name" required></p>
+        <p><label for="email">Email</label><br><input id="email" name="email" type="email" placeholder="you@example.com" required></p>
+        <p><label for="topic">Favourite topic</label><br><select id="topic" name="topic"><option>HTML</option><option>CSS</option><option>Both</option></select></p>
+        <p><label for="message">Message</label><br><textarea id="message" name="message" rows="4" placeholder="Write something..."></textarea></p>
+        <button type="submit">Send message</button>
+      </form>
+    </section>
+  </main>
+  <footer><p>Made while learning semantic HTML.</p></footer>
+</body>
+</html>
