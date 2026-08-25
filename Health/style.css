@@ -1,0 +1,133 @@
+
+
+body{
+    padding: 0;
+    margin: 0;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 60%;
+    margin: auto;
+}
+
+
+.top-bar{
+    padding: 8px 0;
+    font-size: 14px;
+    background-color: whitesmoke;
+}
+
+.top-bar-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+header{
+    background-color: white;
+    padding: 18px 0;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+nav a{
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+
+nav a:hover{
+    color: lightgreen;
+}
+
+
+.nav-button{
+    background-color: lightgreen;
+    padding: 10px 12px;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+.nav-button:hover{
+    color: white;
+    background-color: #333;
+}
+
+
+.hero{
+    height: 85vh;
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.5)),url("Assests/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text{
+    color: white;
+    text-align: center;
+}
+
+.hero-text p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hero-text h1{
+    font-size: 58px;
+}
+
+.button{
+    padding: 15px 25px;
+    background-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.5s;
+}
+
+.button:hover{
+    background-color: #333;
+    color: white;
+}
+
+.section{
+    padding: 80px 0;
+}
+
+
+.about-layout{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.doctor-profile{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.doctor-profile img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.about-text, .about-img{
+    width: 50%;
+}
+
+.about-img img{
+    width: 100%;
+}
