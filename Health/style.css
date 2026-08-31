@@ -5,6 +5,7 @@
 body {
     margin: 0;
     padding: 0;
+
     color: #333;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -26,7 +27,9 @@ body {
 
 .top-bar {
     padding: 8px 0;
+
     font-size: 14px;
+
     background-color: whitesmoke;
 }
 
@@ -43,12 +46,12 @@ body {
 
 header {
     padding: 18px 0;
+
     background-color: white;
 
     position: sticky;
     top: 0;
 
-    /* Keeps header above other sections */
     z-index: 1000;
 }
 
@@ -65,6 +68,7 @@ nav a {
     margin-left: 20px;
 
     color: #333;
+
     text-decoration: none;
 
     transition: 0.3s;
@@ -89,6 +93,7 @@ nav a:hover {
 
 .nav-button:hover {
     color: white;
+
     background-color: #333;
 }
 
@@ -121,6 +126,7 @@ nav a:hover {
 
 .hero-text {
     color: white;
+
     text-align: center;
 }
 
@@ -142,6 +148,7 @@ nav a:hover {
     padding: 15px 25px;
 
     color: #333;
+
     background-color: white;
 
     text-decoration: none;
@@ -153,6 +160,7 @@ nav a:hover {
 
 .button:hover {
     color: white;
+
     background-color: #333;
 }
 
@@ -198,6 +206,7 @@ nav a:hover {
 
 .about-text p {
     color: #666;
+
     line-height: 1.7;
 }
 
@@ -273,14 +282,6 @@ nav a:hover {
 /* Doctor Card */
 
 .card {
-    /*
-       flex: 1 is better than width: 33%.
-
-       If we use width: 33% for all 3 cards,
-       the gaps can cause overflow.
-
-       flex: 1 automatically shares the available space.
-    */
     flex: 1;
 
     border-radius: 10px;
@@ -306,12 +307,6 @@ nav a:hover {
     width: 100%;
     height: 400px;
 
-    /*
-       "object-fit: fit" is invalid CSS.
-
-       cover makes the image fill the available area
-       without stretching.
-    */
     object-fit: cover;
 }
 
@@ -324,6 +319,7 @@ nav a:hover {
 
 .card-content h3 {
     font-size: 28px;
+
     font-weight: bold;
 }
 
@@ -337,7 +333,179 @@ nav a:hover {
 
 
 /* =====================================================
-   9. LOCATION / GOOGLE MAP
+   9. APPOINTMENT SECTION
+===================================================== */
+
+.appointment-layout {
+    display: flex;
+    align-items: center;
+
+    gap: 60px;
+}
+
+
+/* Appointment Image and Form */
+
+.appointment-image,
+.appointment-form {
+    width: 50%;
+
+    box-sizing: border-box;
+}
+
+
+/* Appointment Image */
+
+.appointment-image img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 10px;
+}
+
+
+/* Appointment Form Container */
+
+.appointment-form {
+    padding: 35px;
+
+    background-color: #f9f9f9;
+
+    border-radius: 10px;
+
+    box-shadow:
+        rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+
+/* Appointment Heading */
+
+.appointment-form h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    color: #222;
+
+    font-size: 36px;
+}
+
+
+/* Form */
+
+.appointment-form form {
+    width: 100%;
+
+    padding: 0;
+}
+
+
+/* Form Labels */
+
+.appointment-form form label {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 7px;
+
+    color: #555;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* Form Inputs */
+
+.appointment-form form input,
+.appointment-form form select,
+.appointment-form form textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    background-color: white;
+
+    color: #333;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+
+    /*
+       Very important:
+
+       Without box-sizing: border-box,
+       width: 100% + padding can make the
+       input larger than the form container.
+    */
+    box-sizing: border-box;
+
+    transition: 0.3s;
+}
+
+
+/* Textarea */
+
+.appointment-form form textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+
+/* Input Focus */
+
+.appointment-form form input:focus,
+.appointment-form form select:focus,
+.appointment-form form textarea:focus {
+    outline: none;
+
+    border-color: lightgreen;
+
+    box-shadow:
+        rgba(50, 50, 93, 0.15) 0 4px 10px -2px;
+}
+
+
+/* Appointment Button */
+
+.appointment-form form button {
+    width: 100%;
+
+    margin-top: 25px;
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background-color: lightgreen;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-sizing: border-box;
+}
+
+.appointment-form form button:hover {
+    background-color: #222;
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   10. LOCATION / GOOGLE MAP
 ===================================================== */
 
 .location-section {
@@ -359,7 +527,7 @@ nav a:hover {
 
 
 /* =====================================================
-   10. FOOTER
+   11. FOOTER
 ===================================================== */
 
 footer {
@@ -373,11 +541,17 @@ footer {
     gap: 50px;
 }
 
+
+/* Footer Icons */
+
 .footer-icons i {
     margin-right: 10px;
 
     font-size: 30px;
 }
+
+
+/* Footer Copyright */
 
 .footer-copyrights {
     padding: 50px 0;
@@ -385,99 +559,114 @@ footer {
     text-align: center;
 }
 
-.appointment-layout{
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
 
-.appointment-image, .appointment-form{
-    width: 50%;
-}
+/* =====================================================
+   RESPONSIVE DESIGN - BELOW 768px
+===================================================== */
 
+@media (max-width: 768px) {
 
+    .top-bar {
+        display: none;
+    }
 
-.appointment-form {
-    padding: 35px;
-}
+    /* Hide Entire Navbar / Header */
+    nav {
+        display: none;
+    }
 
-.appointment-image img{
-    width: 100%;
-}
+    .navbar{
+        flex-direction: row;
+        justify-content: center;
+    }
 
-.appointment-form h2{
-    font-size: 36px;
-    color: #222;
-}
-
-form label{
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 7px;
-    font-weight: bold;
-    font-size: 18px;
-    color: #555;
-}
-
-form{
-    padding: 10px;
-}
-
-form input,
-form select,
-form textarea {
-    width: 100%;
-    padding: 10px 14px;
-
-    border-radius: 5px;
-
-    border: 1px solid black;
-
-    font-family: Arial, sans-serif;
-
-    background-color: white;
-
-    font-size: 15px;
-
-    transition: 0.3s;
-}
-
-form input:focus,
-form select:focus,
-form textarea:focus{
-    outline: none;
-
-    border-color: lightgreen;
-    background-color: white;
-
-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;} 
+    /* Common Container */
+    .container {
+        width: 90%;
+    }
 
 
-form button{
-    width: 100%;
+    /* Hero Section */
+    .hero {
+        height: 70vh;
+    }
 
-    border: none;
+    .hero-text h1 {
+        font-size: 40px;
+    }
 
-    padding: 15px;
+    .hero-text p {
+        font-size: 16px;
+    }
 
-    background-color: lightgreen;
 
-    margin-top: 20px;
+    /* About Section */
+    .about-section {
+        min-height: auto;
+        padding: 70px 0;
+    }
 
-    color: white;
+    .about-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
 
-    font-size: 18px;
+    .about-text {
+        width: 100%;
+    }
 
-    font-weight: bold;
+    .about-text h2 {
+        font-size: 28px;
+    }
 
-    cursor: pointer;
 
-    border-radius: 5px;
+    /* Doctor Cards */
+    .doctor-cards {
+        flex-direction: column;
+    }
 
-    transition: 0.3s;
-}
+    .card {
+        width: 100%;
+    }
 
-form button:hover{
-    background-color: #222;
-    transform: translateY(-3px);
+    .card img {
+        height: 350px;
+    }
+
+
+    /* Appointment Section */
+    .appointment-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .appointment-image,
+    .appointment-form {
+        width: 100%;
+    }
+
+    .appointment-form {
+        padding: 25px;
+    }
+
+    .appointment-form h2 {
+        font-size: 28px;
+    }
+
+
+    /* Google Map */
+    .location-section iframe {
+        height: 400px;
+    }
+
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-copyrights {
+        padding: 30px 0;
+    }
 }
