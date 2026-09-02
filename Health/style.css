@@ -170,7 +170,7 @@ nav a:hover {
 ===================================================== */
 
 .about-section {
-    min-height: 100vh;
+    height: 100vh;
 
     background-image: url("./Assests/about-bg.jpg");
     background-size: cover;
@@ -560,113 +560,57 @@ footer {
 }
 
 
-/* =====================================================
-   RESPONSIVE DESIGN - BELOW 768px
-===================================================== */
-
 @media (max-width: 768px) {
-
-    .top-bar {
+    .top-bar{
         display: none;
     }
 
-    /* Hide Entire Navbar / Header */
-    nav {
+    nav{
         display: none;
     }
 
     .navbar{
-        flex-direction: row;
         justify-content: center;
     }
 
-    /* Common Container */
-    .container {
+    .logo{
+        font-size: 28px;
+    }
+
+
+    .container{
         width: 90%;
     }
 
-
-    /* Hero Section */
-    .hero {
+    .hero{
         height: 70vh;
     }
 
-    .hero-text h1 {
-        font-size: 40px;
-    }
-
-    .hero-text p {
-        font-size: 16px;
-    }
-
-
-    /* About Section */
-    .about-section {
+    .about-section{
         min-height: auto;
         padding: 70px 0;
     }
 
-    .about-layout {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .about-text {
-        width: 100%;
-    }
-
-    .about-text h2 {
-        font-size: 28px;
-    }
-
-
-    /* Doctor Cards */
-    .doctor-cards {
+    .doctor-cards{
         flex-direction: column;
     }
 
-    .card {
-        width: 100%;
-    }
-
-    .card img {
-        height: 350px;
-    }
-
-
-    /* Appointment Section */
-    .appointment-layout {
+    .appointment-layout{
         flex-direction: column;
-        gap: 30px;
     }
 
-    .appointment-image,
-    .appointment-form {
+    .appointment-image, 
+    .appointment-form{
         width: 100%;
     }
 
-    .appointment-form {
-        padding: 25px;
-    }
-
-    .appointment-form h2 {
-        font-size: 28px;
-    }
-
-
-    /* Google Map */
-    .location-section iframe {
+    .location-section iframe{
         height: 400px;
     }
 
-
-    /* Footer */
-    .footer-container {
+    .footer-container{
         flex-direction: column;
         gap: 30px;
     }
-
-    .footer-copyrights {
-        padding: 30px 0;
-    }
+    
 }
