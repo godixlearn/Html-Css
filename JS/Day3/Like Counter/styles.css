@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #f4f7fb;
+
+    text-align: center;
+
+    padding-top: 100px;
+}
+
+.card {
+    width: 350px;
+
+    margin: auto;
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 12px 25px;
+
+    border: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-size: 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}

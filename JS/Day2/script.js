@@ -1,54 +1,59 @@
 
 
-const priceInput = document.getElementById('price');
 
-const quantityInput = document.getElementById('quantity');
+// datatype:
 
-const calculateButton = document.getElementById('calculateButton');
+// string, integer, float, boolean, array, object, null, undefined
 
-const subtotalText = document.getElementById('subtotal');
+// "gowrishankar" // string
 
-const discountText = document.getElementById('discount');
+// 5 // integer
 
-const finalAmountText = document.getElementById('finalAmount');
+// 0.5 // float
 
-const messageText = document.getElementById('message');
+// true or false // boolean
 
+// [1, 2, 3, 5, 5] // array
 
+// {
+//     name: "gowrishankar",
+//     age: 25,
+//     isStudent: true
+// } // object
 
-function calculateBill() {
-    const price =  Number(priceInput.value);    
-    const quantity = Number(quantityInput.value);
+// null // null
 
-
-    const subtotal = price * quantity;
-
-    let discount = 0;
-
-    if(subtotal > 1000){
-        discount = subtotal * 0.1;
-
-        messageText.textContent = "You received a 10% discount!";
-
-        messageText.style.color = "green";
-
-    }else{
-        messageText.textContent = "No discount available.";
-        messageText.style.color = "red";
-    }
-
-    const finalAmount = subtotal - discount;
+// undefined // undefined
 
 
-    subtotalText.textContent = "Subtotal: $" + subtotal;
 
-    discountText.textContent = "Discount: $" + discount;
+// let num1 = 5;
+// let num2 = 10;
 
-    finalAmountText.textContent = "Final Amount: $" + finalAmount;
+// if(num1 > num2){
+//     console.log("num1 is greater than num2");
+// }else{
+//     console.log("num2 is greater than num1");
+// }
 
-}
 
 
- calculateButton.addEventListener('click', calculateBill);
+// let price = 100;
+// let quantity = 2;
+
+
+// let totalPrice = price * quantity;
+
+// console.log("Total Price: " + totalPrice);
+
+
+// function sayHello(){
+//     console.log("Hello, Guys!");
+// }
+
+
+// sayHello();
+
+
 
 
