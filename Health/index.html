@@ -16,6 +16,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <script src="./script.js" defer></script>
   </head>
 
   <body>
@@ -33,12 +35,8 @@
           Health Center
         </h2>
 
-        <nav>
-          <a href="#">Home</a>
-          <a href="#">About Us</a>
-          <a href="#">Doctor</a>
-          <a href="#">Contact</a>
-          <a href="#Appointment" class="nav-button">Make an Appointment</a>
+        <nav id="navbarLinks">
+          
         </nav>
       </div>
     </header>
@@ -84,78 +82,8 @@
         <div class="container">
           <h2>Our Doctors</h2>
 
-          <div class="doctor-cards">
-            <div class="card">
-              <img src="./Assests/team-image1.jpg" alt="doctor1" />
+          <div class="doctor-cards" id="doctorContainer">
 
-              <div class="card-content">
-                <h3>Nate Baston</h3>
-                <p>General Principal</p>
-                <hr />
-                <p>
-                  <i
-                    class="fa-solid fa-phone"
-                    style="color: rgb(251, 7, 29)"
-                  ></i
-                  >010-020-0120
-                </p>
-                <p>
-                  <i
-                    class="fa-solid fa-envelope"
-                    style="color: rgb(251, 7, 29)"
-                  ></i
-                  >general@company.com
-                </p>
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="./Assests/team-image2.jpg" alt="doctor2" />
-
-              <div class="card-content">
-                <h3>Nate Baston</h3>
-                <p>General Principal</p>
-                <hr />
-                <p>
-                  <i
-                    class="fa-solid fa-phone"
-                    style="color: rgb(251, 7, 29)"
-                  ></i
-                  >010-020-0120
-                </p>
-                <p>
-                  <i
-                    class="fa-solid fa-envelope"
-                    style="color: rgb(251, 7, 29)"
-                  ></i
-                  >general@company.com
-                </p>
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="./Assests/team-image3.jpg" alt="doctor3" />
-
-              <div class="card-content">
-                <h3>Nate Baston</h3>
-                <p>General Principal</p>
-                <hr />
-                <p>
-                  <i
-                    class="fa-solid fa-phone"
-                    style="color: rgb(251, 7, 29)"
-                  ></i
-                  >010-020-0120
-                </p>
-                <p>
-                  <i
-                    class="fa-solid fa-envelope"
-                    style="color: rgb(251, 7, 29)"
-                  ></i
-                  >general@company.com
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -205,7 +133,6 @@
         </div>
       </section>
 
-      <section class="contact" id="home"></section>
     </main>
 
     <footer>
