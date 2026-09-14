@@ -5,35 +5,102 @@ const products = [
   { name: "Milk", price: 60, category: "dairy" }
 ];
 
-const productName = "Apple";
 
-const searchedProducts = products.filter((product)=>{
-    return products.name === productName;
-});
+// const fruits = ["apple", "banana", "Oragnge"];
 
-// console.log(searchedProducts);
+// console.log(fruits[0]);
 
-const affordableProducts = products.filter((product)=>{
-    // console.log(product.price < 100);
-    return product.price < 100;
-})
-
-// console.log(affordableProducts);
+// for(let i = 0; i < fruits.length; i++){
+//     console.log(fruits[i]);
+// }
 
 
-const friutCategory = products.filter((product)=>{
-    return product.category === "fruits";
-}) 
+// adding value to the array at the end
 
-// console.log(friutCategory);
+// fruits.push("Kivi");
+
+// console.log(fruits);
+
+// fruits.pop();
+
+// console.log(fruits);
 
 
-const searchText = 'A';
+// adding value to the array at the start
 
-const searchResult = products.filter((product)=>{
-    return product.name.toLowerCase().includes(searchText.toLowerCase())
-})
 
-console.log(searchResult);
+
+// fruits.unshift("Mango");
+
+// console.log(fruits);
+
+// fruits.shift();
+
+// console.log(fruits);
+
+
+// Includes(), find() and filter()
+
+const fruits = ["banana", "apple", "Oragnge", "apple",];
+
+
+// 1. Includes
+// console.log(fruits.includes("Apple"));
+
+// 2. find()
+
+// const result = fruits.find((fruit) =>{
+//     return fruit === "apple";
+// })
+
+
+// console.log(result);
+
+
+// 3. filter
+
+// const result = fruits.filter((fruit) =>{
+//     return fruit === "apple";
+// })
+
+
+// console.log(result);
+
+
+
+
+
+
+
+// const productName = "Apple";
+
+// const searchedProducts = products.filter((product)=>{
+//     return products.name === productName;
+// });
+
+// // console.log(searchedProducts);
+
+// const affordableProducts = products.filter((product)=>{
+//     // console.log(product.price < 100);
+//     return product.price < 100;
+// })
+
+// // console.log(affordableProducts);
+
+
+// const friutCategory = products.filter((product)=>{
+//     return product.category === "fruits";
+// }) 
+
+// // console.log(friutCategory);
+
+
+// const searchText = 'A';
+
+// const searchResult = products.filter((product)=>{
+//     return product.name.toLowerCase().includes(searchText.toLowerCase())
+// })
+
+// console.log(searchResult);
 
 
