@@ -2,12 +2,16 @@ let products = [];
 
 function getProducts(){
   fetch("https://dummyjson.com/products")
-    .then((response) => {
+    .then((response)=>{
       return response.json();
     })
-    .then((data) =>{
-      products = data.products; // assign the products data
+    .then((data)=>{
+      products = data.products;
+
       showProducts(products);
+    })
+    .catch((error)=>{
+      console.log("Error", error);
     })
 }
 
