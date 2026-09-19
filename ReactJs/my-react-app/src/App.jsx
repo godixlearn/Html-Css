@@ -1,25 +1,25 @@
-import TopBar from "./components/TopBar";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Appointment from "./components/Appointment";
-import Location from "./components/Location";
+import TopBar from "./components/TopBar/TopBar";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Hero from "./components/Hero/Hero";
+import About from "./components/About/About";
+import Appointment from "./components/Appointment/Appointment";
+import Location from "./components/Location/Location";
 
-function App(){
-  return(
+function App() {
+  return (
     <>
       <TopBar />
       <Navbar />
       <main>
-        <Hero/>
-        <About/>
-        <Appointment /> 
+        <Hero />
+        <About />
+        <Appointment />
         <Location />
       </main>
-      <Footer/>
+      <Footer />
     </>
-  )
+  );
 }
 
 export default App;

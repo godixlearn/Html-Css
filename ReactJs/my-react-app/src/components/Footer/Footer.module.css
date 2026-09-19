@@ -1,0 +1,30 @@
+/* =====================================================
+   11. FOOTER
+===================================================== */
+
+footer {
+  padding-top: 50px;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+/* Footer Icons */
+
+.footerIcons i {
+  margin-right: 10px;
+
+  font-size: 30px;
+}
+
+/* Footer Copyright */
+
+.footerCopyrights {
+  padding: 50px 0;
+
+  text-align: center;
+}

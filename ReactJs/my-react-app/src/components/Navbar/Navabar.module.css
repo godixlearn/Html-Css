@@ -1,0 +1,50 @@
+header {
+  padding: 18px 0;
+
+  background-color: white;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navbar Links */
+
+nav a {
+  margin-left: 20px;
+
+  color: #333;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: lightgreen;
+}
+
+/* Appointment Button */
+
+.navButton {
+  padding: 10px 12px;
+
+  background-color: lightgreen;
+
+  border-radius: 4px;
+
+  transition: 0.5s;
+}
+
+.navButton:hover {
+  color: white;
+
+  background-color: #333;
+}
