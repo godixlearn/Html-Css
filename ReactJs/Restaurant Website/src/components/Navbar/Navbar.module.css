@@ -1,0 +1,59 @@
+.header {
+  padding: 15px 10px;
+  border-bottom: 1px solid orangered;
+
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+  color: black;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: orangered;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.links a {
+  color: grey;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: orangered;
+}
+
+.button {
+  padding: 12px 18px;
+  background-color: orange;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: orangered;
+}
