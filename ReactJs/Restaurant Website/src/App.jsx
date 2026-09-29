@@ -1,10 +1,10 @@
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <h1>i am hari</h1>
+      <p>i am a student</p>
     </>
   );
 }
