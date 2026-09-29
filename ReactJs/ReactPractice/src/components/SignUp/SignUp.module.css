@@ -36,3 +36,9 @@
 .button:hover {
   background-color: #0056b3;
 }
+
+.clickableText {
+  color: blue;
+  cursor: pointer;
+  font-weight: 700;
+}

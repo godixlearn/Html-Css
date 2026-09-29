@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./SignUp.module.css";
 
-function SignUp() {
+function SignUp({ isSignUp, setIsSignUp }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -58,6 +58,16 @@ function SignUp() {
         <button className={styles.button} type="submit">
           Sign Up
         </button>
+
+        <p>
+          Already have an account? {isSignUp}
+          <span
+            className={styles.clickableText}
+            onClick={() => setIsSignUp(false)}
+          >
+            Sign In
+          </span>
+        </p>
       </form>
     </div>
   );
