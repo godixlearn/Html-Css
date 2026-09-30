@@ -47,6 +47,8 @@ function SignUp({ isSignUp, setIsSignUp }) {
           onChange={(event) => setPassword(event.target.value)}
         />
 
+
+
         <input
           className={styles.input}
           type="password"
