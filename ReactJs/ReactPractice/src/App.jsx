@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import "./App.css";
-
-function App() {}
-=======
 // import { useState } from "react";
 import { useState } from "react";
 import SignIn from "./components/SignIn/SignIn";
@@ -21,5 +16,4 @@ function App() {
     </div>
   );
 }
->>>>>>> c8d4868139911471ba59ca9d543a18ecd369a549
 export default App;
