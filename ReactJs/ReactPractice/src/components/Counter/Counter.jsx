@@ -5,9 +5,8 @@ function Counter() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log("Count value has changed:", count);
-  }, [count]); 
-
+    alert("Count value has changed: " + count);
+  }, [count]);
 
   // useEffect(accept callback function, Dependency array)
 
