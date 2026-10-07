@@ -7,7 +7,7 @@ function UserList() {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    fetch("https://dummyjson12.com/users")
+    fetch("https://dummyjson.com/users")
       .then((response) => {
         return response.json();
       })
