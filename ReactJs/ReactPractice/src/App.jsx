@@ -1,11 +1,18 @@
 import "./App.css";
-import UserList from "./components/UserList/UserList";
+import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import Offer from "./components/Offer/Offer";
+import Testimonials from "./components/Testimonials/Testimonials";
 
 function App() {
   return (
-    <div>
-      <UserList />
-      <Product/>
+    <div className="app">
+      <Navbar />
+      <main>
+        <Offer />
+        <Testimonials />
+      </main>
+      <Footer />
     </div>
   );
 }
