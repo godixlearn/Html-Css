@@ -1,0 +1,103 @@
+.testimonials {
+  width: 100%;
+  padding: 45px 5%;
+  box-sizing: border-box;
+  background-color: #bde6da;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #171717;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 17px;
+  color: #555;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 22px 18px;
+  background-color: #f1efef;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(76, 126, 205, 0.5); /* Blue glow */
+
+  transition: transform 0.1s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.profile {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.stars {
+  color: #f54a00;
+  font-size: 19px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.review {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.card h4 {
+  font-size: 14px;
+  color: #111;
+  margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .testimonials {
+    padding: 35px 18px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

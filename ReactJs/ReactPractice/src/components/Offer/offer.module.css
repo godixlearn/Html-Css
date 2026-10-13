@@ -1,0 +1,49 @@
+.offercontent{
+    color: #faf9f9;
+    width: 100%;
+    height: 180px;
+    background-color: #0c0500;
+    background-image: linear-gradient(90deg, rgba(12, 5, 0, 0.96), rgba(12, 5, 0, 0.6));
+    background-size: cover;
+    background-position: center;
+    padding:  0px 0px 0px 100px;
+   
+    
+}
+
+.offercontent h1{
+    padding: 0;
+    margin: 0;
+    font-size: 50px;
+    color: #faf9f9;
+}
+
+
+.discount{
+    
+    color: #f17025;
+}
+.code{
+    border: 1px dashed #ddd7d3;
+    padding:5px 5px;
+    border-radius: 5px;
+    font-style:arial;
+
+}
+
+
+.offercontent h1 {
+    margin-block: 4px;
+}
+
+
+.orderButton{
+background-color: #f17025;
+border-radius: 5px;
+}
+
+.offerTitle{
+    font-size: 20px;
+    font-weight: 200;
+    padding-top: 5px;
+}
