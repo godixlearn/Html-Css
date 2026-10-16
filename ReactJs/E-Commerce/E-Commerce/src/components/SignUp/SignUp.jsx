@@ -25,6 +25,8 @@ function SignUp() {
       <form className={styles.form} onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
 
+        <a href="#">Click me</a>
+
         <input
           className={styles.input}
           type="text"
