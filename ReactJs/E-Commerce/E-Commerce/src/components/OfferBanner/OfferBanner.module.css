@@ -1,0 +1,133 @@
+/* Main Offer Container */
+.offer {
+  position: relative;
+  width: 100%;
+  min-height: 250px; /* Slightly shorter than the Hero banner */
+  display: flex;
+  align-items: center;
+
+  /* Dynamic background image via CSS variable */
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 2rem;
+  margin: 3rem 0; /* Adds breathing room between sections */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Dark Diagonal Gradient Overlay */
+.offer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Diagonal gradient for a more dynamic, energetic "offer" feel */
+  background: linear-gradient(
+    115deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 45%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+/* Content Wrapper */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Eyebrow Text (Styled as a "Sale/Discount" Tag) */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+
+  /* Using the red surface color for urgency */
+  background-color: var(--color-surface);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  width: fit-content;
+  box-shadow: 0 4px 12px rgba(200, 22, 22, 0.3); /* Subtle red glow */
+}
+
+/* Main Title */
+.title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+/* Description Paragraph */
+.description {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* Call to Action Button */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 0.875rem 2.25rem;
+
+  /* Using red for the CTA to drive action */
+  background-color: var(--color-surface);
+  color: #ffffff !important; /* Overrides global link color */
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  border-radius: var(--radius-md);
+  width: fit-content;
+
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  box-shadow: 0 4px 15px rgba(200, 22, 22, 0.25);
+}
+
+.ctaButton:hover {
+  background-color: #a81212; /* Darker shade of --color-surface */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200, 22, 22, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .offer {
+    min-height: 400px;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .content {
+    align-items: center;
+  }
+
+  .offer::before {
+    /* On mobile, revert to a top-to-bottom gradient for center alignment */
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  }
+}
