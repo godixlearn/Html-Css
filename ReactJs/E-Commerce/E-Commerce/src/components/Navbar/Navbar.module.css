@@ -2,56 +2,99 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1.5rem;
+  gap: 24px;
+  padding: 16px 32px;
   background-color: var(--color-background);
   border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 100;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm, 6px);
+  color: var(--color-primary);
+  font-size: 26px;
+  cursor: pointer;
+  padding: 6px;
+  transition: background-color var(--transition-fast, 0.2s ease);
+}
+
+.menuButton:hover {
+  background-color: var(--color-hover, #f5f5f5);
+}
+
+.menuButton:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 10px;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.logo span {
+  font-size: 26px;
 }
 
 .logo h1 {
-  font-size: 1.25rem;
+  font-size: 24px;
   font-weight: 700;
   color: var(--color-primary);
-  letter-spacing: -0.02em;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 28px;
 }
 
 .navbar a {
-  font-size: 0.95rem;
-  font-weight: 500;
   color: var(--color-secondary);
-  transition: color 0.2s ease;
-  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-fast, 0.2s ease);
 }
 
 .navbar a:hover {
   color: var(--color-accent);
 }
 
-.navbar a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-accent);
-  transition: width 0.25s ease;
+.navbar a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
-.navbar a:hover::after {
-  width: 100%;
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 14px 16px;
+  }
+
+  .leftSection {
+    gap: 12px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+  }
 }

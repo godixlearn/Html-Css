@@ -84,6 +84,21 @@ h6 {
   --color-accent: #e48021;
   --color-surface: #c81616;
   --color-border: #d4d4d4;
+
+  /* Additional reusable colors */
+  --color-hover: #f5f5f5;
+  --color-accent-light: #fff3e7;
+  --color-overlay: rgba(0, 0, 0, 0.45);
+
+  /* Layout tokens */
+  --sidebar-width: 280px;
+  --navbar-height: 72px;
+
+  /* UI tokens */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
 }
 
 body {
