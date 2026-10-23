@@ -1,4 +1,5 @@
 import styles from "./ProductCard.module.css";
+import { Link } from "react-router-dom";
 
 export default function ProductCard({ product }) {
   const {
@@ -65,7 +66,7 @@ export default function ProductCard({ product }) {
         </div>
 
         <button type="button" className={styles.addToCart}>
-          Add to Cart
+          <Link to={`/products/${product.id}`}>View Details</Link>
         </button>
       </div>
     </article>

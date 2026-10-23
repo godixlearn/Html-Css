@@ -151,7 +151,6 @@
   margin-top: auto;
   padding: 11px 12px;
   color: #ffffff;
-  background-color: var(--color-primary);
   border: none;
   border-radius: var(--radius-sm);
   font-size: 13px;
@@ -160,10 +159,6 @@
   transition:
     background-color var(--transition-fast),
     color var(--transition-fast);
-}
-
-.addToCart:hover {
-  background-color: var(--color-accent);
 }
 
 .addToCart:focus-visible {

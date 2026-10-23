@@ -9,6 +9,7 @@ import AuthLayout from "./layouts/AuthLayout/AuthLayout.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
 import SignUp from "./components/SignUp/SignUp.jsx";
 import Notification from "./components/Notification/Notification.jsx";
+import ProductDetails from "./components/ProductDetails/ProductDetails.jsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="home" element={<Home />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:id" element={<ProductDetails />} />
           <Route path="cart" element={<Cart />} />
           <Route path="profile" element={<Profile />} />
         </Route>
