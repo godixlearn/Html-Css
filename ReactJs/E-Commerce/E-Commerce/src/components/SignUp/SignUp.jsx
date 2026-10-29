@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./SignUp.module.css";
 
+import { signUp, getAuthErrorMessage } from "../../services/authService";
+import { toast } from "react-toastify";
+
 function SignUp() {
   const navigate = useNavigate();
 
@@ -13,7 +16,7 @@ function SignUp() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState("");
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     setError("");
 
@@ -22,8 +25,16 @@ function SignUp() {
       return;
     }
 
-    // Add your signup API or authentication logic here.
-    navigate("/home");
+    try {
+      await signUp(name, email, password);
+
+      toast.success("Account created successfully!");
+
+      navigate("/home");
+    } catch (error) {
+      console.error(error.code);
+      toast.error(getAuthErrorMessage(error.code));
+    }
   }
 
   return (

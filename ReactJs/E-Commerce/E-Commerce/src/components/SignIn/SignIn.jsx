@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import styles from "./SignIn.module.css";
+import { signIn, getAuthErrorMessage } from "../../services/authService";
 
 function SignIn() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ function SignIn() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     if (!email.trim() || !password) {
@@ -18,9 +19,14 @@ function SignIn() {
       return;
     }
 
-    // TODO: Replace with Firebase authentication.
-    toast.success("Signed in successfully!");
-    navigate("/home");
+    try {
+      await signIn(email, password);
+
+      toast.success("Signed in successfully!");
+      navigate("/home");
+    } catch (error) {
+      toast.error(getAuthErrorMessage(error.code));
+    }
   }
 
   return (
