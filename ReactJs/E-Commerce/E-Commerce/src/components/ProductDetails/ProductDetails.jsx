@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getProductsById } from "../../services/productService";
 import styles from "./ProductDetails.module.css";
+import { useCart } from "../../Context/CartContext";
 
 const formatPrice = (amount) =>
   new Intl.NumberFormat("en-IN", {
@@ -11,6 +12,8 @@ const formatPrice = (amount) =>
   }).format(amount);
 
 function ProductDetails() {
+  const { addToCart } = useCart();
+
   const { id } = useParams();
   const product = getProductsById(Number(id));
 
@@ -55,14 +58,6 @@ function ProductDetails() {
 
   const decreaseQuantity = () => {
     setQuantity((previous) => Math.max(previous - 1, 1));
-  };
-
-  const handleAddToCart = () => {
-    // Connect your cart context or cart service here.
-    console.log("Add to cart:", {
-      productId: product.id,
-      quantity,
-    });
   };
 
   return (
@@ -160,7 +155,7 @@ function ProductDetails() {
               <button
                 type="button"
                 className={styles.addToCart}
-                onClick={handleAddToCart}
+                onClick={() => addToCart(product, quantity)}
                 disabled={isOutOfStock}
               >
                 {isOutOfStock ? "Out of Stock" : "Add to Cart"}

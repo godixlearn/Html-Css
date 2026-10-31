@@ -3,8 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { logout, getAuthErrorMessage } from "../../services/authService";
 import { toast } from "react-toastify";
+import { useCart } from "../../Context/CartContext";
 
 export default function Navbar({ onMenuClick, isSidebarOpen }) {
+  const { totalQuanity } = useCart();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const profileRef = useRef(null);
   const navigate = useNavigate();
@@ -68,7 +70,9 @@ export default function Navbar({ onMenuClick, isSidebarOpen }) {
       <nav className={styles.navbar} aria-label="Main navigation">
         <Link to="/home">Home</Link>
         <Link to="/products">Products</Link>
-        <Link to="/cart">Cart</Link>
+        <Link to="/cart">
+          Cart<span className={styles.badge}>{totalQuanity}</span>
+        </Link>
       </nav>
 
       <div className={styles.profileWrapper} ref={profileRef}>

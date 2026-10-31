@@ -1,15 +1,9 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { products } from "../../data/products";
 import styles from "./Cart.module.css";
-
-const initialCartItems = [
-  { ...products[0], quantity: 1 },
-  { ...products[1], quantity: 1 },
-];
+import { useCart } from "../../Context/CartContext";
 
 function Cart() {
-  const [cartItems, setCartItems] = useState(initialCartItems);
+  const { cartItems } = useCart();
 
   const updateQuantity = (id, change) => {
     setCartItems((items) =>
