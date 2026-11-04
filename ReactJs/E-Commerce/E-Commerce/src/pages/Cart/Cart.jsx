@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Cart.module.css";
 import { useCart } from "../../Context/CartContext";
+import OpenRazorPay from "../../components/RazorPay/RazorPay";
 
 function Cart() {
   const { cartItems, updateQuantity, removeItem } = useCart();
@@ -21,6 +22,10 @@ function Cart() {
     (total, item) => total + item.quantity,
     0,
   );
+
+  function onCheckout() {
+    OpenRazorPay();
+  }
 
   if (cartItems.length === 0) {
     return (
@@ -134,9 +139,9 @@ function Cart() {
             <strong>{formatPrice(subtotal)}</strong>
           </div>
 
-          <Link to="/checkout" className={styles.checkoutButton}>
+          <button className={styles.checkoutButton} onClick={onCheckout}>
             Proceed to Checkout
-          </Link>
+          </button>
 
           <p className={styles.secureNote}>
             Secure checkout · Shop with confidence
