@@ -157,21 +157,32 @@
   outline-offset: -2px;
 }
 
-.badge {
-  background-color: #ff4d4f; /* Vibrant notification red */
-  color: #ffffff; /* Clean white text */
-  font-size: 11px; /* Small, readable font */
-  font-weight: 600; /* Bold text to make the number pop */
-  padding: 2px 6px; /* Vertical and horizontal spacing */
-  border-radius: 10px; /* Gives it that classic pill shape */
-  line-height: 1; /* Centers the text vertically */
-  display: inline-block; /* Ensures padding behaves correctly */
-  text-align: center;
-  min-width: 12px; /* Keeps it round if the number is a single digit */
+.cartLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
 
-  /* Optional: Dynamic positioning to float slightly above the text */
-  position: relative;
-  top: -2px;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+
+  background-color: #ef4444;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+
+  border-radius: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .logoutButton {

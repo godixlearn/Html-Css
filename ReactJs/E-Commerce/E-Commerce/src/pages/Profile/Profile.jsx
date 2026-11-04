@@ -1,31 +1,62 @@
 import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, updateProfile } from "firebase/auth";
 import { auth, authPersistence } from "../../Config/Firebase";
 import styles from "./Profile.module.css";
 
 function Profile() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isEditing, setIsEditing] = useState(false);
+  const [photoURL, setPhotoURL] = useState("");
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     async function initializeAuth() {
       try {
         await authPersistence;
 
-        onAuthStateChanged(auth, (currentUser) => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
           setUser(currentUser);
+          setPhotoURL(currentUser?.photoURL || "");
           setLoading(false);
         });
+
+        return unsubscribe;
       } catch (error) {
         console.error("Failed to initialize authentication:", error);
         setLoading(false);
       }
     }
 
-    initializeAuth();
+    let unsubscribe;
+
+    initializeAuth().then((cleanup) => {
+      unsubscribe = cleanup;
+    });
+
+    return () => unsubscribe?.();
   }, []);
 
-  console.log(user);
+  async function handleSavePhoto() {
+    if (!auth.currentUser) return;
+
+    try {
+      setSaving(true);
+
+      await updateProfile(auth.currentUser, {
+        photoURL: photoURL.trim(),
+      });
+
+      setUser({ ...auth.currentUser });
+      setIsEditing(false);
+    } catch (error) {
+      console.error("Firebase error code:", error.code);
+      console.error("Firebase error message:", error.message);
+      console.error("Full error:", error);
+    } finally {
+      setSaving(false);
+    }
+  }
 
   if (loading) {
     return <div className={styles.message}>Loading profile...</div>;
@@ -58,7 +89,46 @@ function Profile() {
                 .toUpperCase()}
             </div>
           )}
+
+          <button
+            type="button"
+            className={styles.editAvatar}
+            onClick={() => {
+              setPhotoURL(user.photoURL || "");
+              setIsEditing(!isEditing);
+            }}
+            title="Edit profile picture URL"
+          >
+            ✎
+          </button>
         </div>
+
+        {isEditing && (
+          <div className={styles.photoEditor}>
+            <input
+              type="url"
+              placeholder="Enter profile image URL"
+              value={photoURL}
+              onChange={(e) => setPhotoURL(e.target.value)}
+            />
+
+            <div className={styles.editActions}>
+              <button type="button" onClick={handleSavePhoto} disabled={saving}>
+                {saving ? "Saving..." : "Save"}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setPhotoURL(user.photoURL || "");
+                  setIsEditing(false);
+                }}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
 
         <h2 className={styles.displayName}>
           {user.displayName || "Not provided"}

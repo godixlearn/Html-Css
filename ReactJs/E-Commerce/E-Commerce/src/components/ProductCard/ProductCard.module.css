@@ -42,30 +42,27 @@
 
 /* Badges */
 
-.badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 5px 9px;
-  color: #ffffff;
-  background-color: var(--color-primary);
-  border-radius: var(--radius-sm);
-  font-size: 10px;
-  font-weight: 600;
-  z-index: 1;
-}
-
+.badge,
 .discount {
   position: absolute;
   top: 10px;
-  right: 10px;
-  padding: 5px 8px;
+  padding: 5px 9px;
   color: #ffffff;
-  background-color: var(--color-accent);
   border-radius: var(--radius-sm);
   font-size: 10px;
-  font-weight: 700;
   z-index: 1;
+}
+
+.badge {
+  left: 10px;
+  background-color: var(--color-primary);
+  font-weight: 600;
+}
+
+.discount {
+  right: 10px;
+  background-color: var(--color-accent);
+  font-weight: 700;
 }
 
 /* Product Content */
@@ -92,11 +89,11 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  min-height: 42px;
   color: var(--color-primary);
   font-size: 15px;
   font-weight: 600;
   line-height: 1.4;
-  min-height: 42px;
 }
 
 /* Rating */
@@ -144,21 +141,32 @@
   font-size: 12px;
 }
 
-/* Add to Cart Button */
+/* View Details Button */
 
 .addToCart {
   width: 100%;
   margin-top: auto;
   padding: 11px 12px;
   color: #ffffff;
-  border: none;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
   border-radius: var(--radius-sm);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition:
     background-color var(--transition-fast),
-    color var(--transition-fast);
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.addToCart:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.addToCart:active {
+  transform: scale(0.98);
 }
 
 .addToCart:focus-visible {
@@ -206,8 +214,8 @@
   }
 
   .productName {
-    font-size: 13px;
     min-height: 36px;
+    font-size: 13px;
   }
 
   .star {
@@ -232,6 +240,8 @@
     font-size: 12px;
   }
 }
+
+/* Reduced Motion */
 
 @media (prefers-reduced-motion: reduce) {
   .productCard,

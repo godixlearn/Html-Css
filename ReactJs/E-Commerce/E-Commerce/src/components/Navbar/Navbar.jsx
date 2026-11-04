@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { useCart } from "../../Context/CartContext";
 
 export default function Navbar({ onMenuClick, isSidebarOpen }) {
-  const { totalQuanity } = useCart();
+  const { totalQuantity } = useCart();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const profileRef = useRef(null);
   const navigate = useNavigate();
@@ -70,8 +70,16 @@ export default function Navbar({ onMenuClick, isSidebarOpen }) {
       <nav className={styles.navbar} aria-label="Main navigation">
         <Link to="/home">Home</Link>
         <Link to="/products">Products</Link>
-        <Link to="/cart">
-          Cart<span className={styles.badge}>{totalQuanity}</span>
+        <Link to="/cart" className={styles.cartLink}>
+          Cart
+          {totalQuantity > 0 && (
+            <span
+              className={styles.badge}
+              aria-label={`${totalQuantity} items in cart`}
+            >
+              {totalQuantity}
+            </span>
+          )}
         </Link>
       </nav>
 

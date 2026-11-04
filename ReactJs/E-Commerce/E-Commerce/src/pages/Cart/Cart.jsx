@@ -3,21 +3,7 @@ import styles from "./Cart.module.css";
 import { useCart } from "../../Context/CartContext";
 
 function Cart() {
-  const { cartItems } = useCart();
-
-  const updateQuantity = (id, change) => {
-    setCartItems((items) =>
-      items
-        .map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity + change } : item,
-        )
-        .filter((item) => item.quantity > 0),
-    );
-  };
-
-  const removeItem = (id) => {
-    setCartItems((items) => items.filter((item) => item.id !== id));
-  };
+  const { cartItems, updateQuantity, removeItem } = useCart();
 
   const formatPrice = (price) =>
     new Intl.NumberFormat("en-IN", {
@@ -27,7 +13,7 @@ function Cart() {
     }).format(price);
 
   const subtotal = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
+    (total, item) => total + item.product.price * item.quantity,
     0,
   );
 
@@ -63,61 +49,65 @@ function Cart() {
 
       <div className={styles.layout}>
         <section className={styles.itemsSection}>
-          {cartItems.map((item) => (
-            <article key={item.id} className={styles.cartItem}>
-              <img
-                src={item.imageUrl}
-                alt={item.name}
-                className={styles.productImage}
-              />
+          {cartItems.map((item) => {
+            const product = item.product;
 
-              <div className={styles.itemDetails}>
-                <p className={styles.category}>{item.category}</p>
-                <h2>{item.name}</h2>
-                <p className={styles.brand}>{item.brand}</p>
+            return (
+              <article key={product.id} className={styles.cartItem}>
+                <img
+                  src={product.imageUrl}
+                  alt={product.name}
+                  className={styles.productImage}
+                />
 
-                <div className={styles.prices}>
-                  <strong>{formatPrice(item.price)}</strong>
-                  <del>{formatPrice(item.originalprice)}</del>
-                </div>
+                <div className={styles.itemDetails}>
+                  <p className={styles.category}>{product.category}</p>
+                  <h2>{product.name}</h2>
+                  <p className={styles.brand}>{product.brand}</p>
 
-                <div className={styles.itemActions}>
-                  <div className={styles.quantityControl}>
-                    <button
-                      type="button"
-                      onClick={() => updateQuantity(item.id, -1)}
-                      aria-label={`Decrease quantity of ${item.name}`}
-                    >
-                      −
-                    </button>
-
-                    <span>{item.quantity}</span>
-
-                    <button
-                      type="button"
-                      disabled={item.quantity >= item.stock}
-                      onClick={() => updateQuantity(item.id, 1)}
-                      aria-label={`Increase quantity of ${item.name}`}
-                    >
-                      +
-                    </button>
+                  <div className={styles.prices}>
+                    <strong>{formatPrice(product.price)}</strong>
+                    <del>{formatPrice(product.originalprice)}</del>
                   </div>
 
-                  <button
-                    type="button"
-                    className={styles.removeButton}
-                    onClick={() => removeItem(item.id)}
-                  >
-                    Remove
-                  </button>
-                </div>
-              </div>
+                  <div className={styles.itemActions}>
+                    <div className={styles.quantityControl}>
+                      <button
+                        type="button"
+                        onClick={() => updateQuantity(product.id, -1)}
+                        aria-label={`Decrease quantity of ${product.name}`}
+                      >
+                        −
+                      </button>
 
-              <strong className={styles.itemTotal}>
-                {formatPrice(item.price * item.quantity)}
-              </strong>
-            </article>
-          ))}
+                      <span>{item.quantity}</span>
+
+                      <button
+                        type="button"
+                        disabled={item.quantity >= product.stock}
+                        onClick={() => updateQuantity(product.id, 1)}
+                        aria-label={`Increase quantity of ${product.name}`}
+                      >
+                        +
+                      </button>
+                    </div>
+
+                    <button
+                      type="button"
+                      className={styles.removeButton}
+                      onClick={() => removeItem(product.id)}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+
+                <strong className={styles.itemTotal}>
+                  {formatPrice(product.price * item.quantity)}
+                </strong>
+              </article>
+            );
+          })}
 
           <Link to="/products" className={styles.continueShopping}>
             ← Continue shopping

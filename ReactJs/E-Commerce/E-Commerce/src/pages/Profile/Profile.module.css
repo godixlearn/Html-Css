@@ -123,3 +123,80 @@
     font-size: 20px;
   }
 }
+
+.avatarWrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+}
+
+.avatar,
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.editAvatar {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: #2563eb;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photoEditor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 350px;
+  margin: 15px auto;
+}
+
+.photoEditor input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.editActions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.editActions button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.editActions button:first-child {
+  background: #2563eb;
+  color: white;
+}
+
+.editActions button:last-child {
+  background: #e5e7eb;
+  color: #333;
+}
+
+.editActions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
