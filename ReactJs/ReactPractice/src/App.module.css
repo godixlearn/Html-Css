@@ -1,0 +1,11 @@
+.page {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0 50px;
+}
+
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
